@@ -28,36 +28,36 @@ The end users of this data warehouse concern the quality of NYC public schools m
 
 ## ETL Process
 ### Dimension Tables:
-HighSchoolDim
+HighSchoolDim <br>
 High School Dimensional table shows basic information of a public high school, including school id, school name, minimum and maximum grade, and school type.
 ![HighSchoolDim](ETL_screenshots/HighSchoolDim.JPG)
 
-LocationDim
+LocationDim <br>
 Location Dimensional table includes address-related information, including Street, City, State, Zipcode, Latitude, and Longitude. In this steps, we selected target variables according to the finalized dimensional modeling. Then we created the dimension.
 ![LocationDim](ETL_screenshots/LocationDim.JPG)
 
-CrimeDim
+CrimeDim <br>
 Crime Dimension provides the information about criminal activity in school. It has the following attributes: Crime Type, Crime Name and With or Without Weapon indicator. 
 ![CrimeDim](ETL_screenshots/CrimeDIM_successful_ETL_screenshot.JPG)
 
-DateDim
+DateDim <br>
 ![DateDim](ETL_screenshots/DateDim.PNG)
 
 ### Fact Tables:
-Building Utilization Fact Table
+Building Utilization Fact Table <br>
 Building Utilization Fact Table links to two dimensional tables: High School Dim and Location Dim. It shows building id, the number of students enrolled in a building, the historical capacity of a building, and density of a building.
 ![Building Utilization Fact Steps](ETL_screenshots/BuildingUtilizationFact_Steps.jpg)
 ![Building Utilization Fact Table](ETL_screenshots/BuildingUtilizationFact_StepMetrics.JPG)
 
-Crime Activity Fact Table
+Crime Activity Fact Table <br>
 This Fact Table links together two dimensions: Crime Dim and High School Dim. This table shows us school number, crime type, number of crimes and weather the crime was committed with or without the gun.   
 ![Crime Activity Fact Table](ETL_screenshots/CrimeActivityFACT_successful_ETL_screenshot.JPG)
 
-SATScoresFact
+SATScoresFact <br>
 The SAT Scores Fact has the total average SAT scores by school. It required us to look up the high school dimension id from the HighSchoolDim (luckily, the natural key was consistent between the SAT data set and the High School Directory data set). Moreover, since the scope of schools included on the two data sets differed, we needed to source both data sets and merge join the results so as to not get any errors during the dimensional look up step. Lastly, the calculations for the KPIs were carried out prior to loading the Fact table.
 ![SATScoresFact](ETL_screenshots/SATScoreFact_successful_ETL_screenshot.JPG)
 
-SchoolBasicInfoFact
+SchoolBasicInfoFact <br>
 The School Directory data set was pulled for this fact table and merged with location data. A calculation step determined the number of minutes in school. Lastly, the date dimension was brought in before the Fact table was loaded with the values.
 ![SchoolBasicInfoFact](ETL_screenshots/School_Basic_Info_Fact.PNG)
 
