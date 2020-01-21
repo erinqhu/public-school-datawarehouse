@@ -62,3 +62,19 @@ The School Directory data set was pulled for this fact table and merged with loc
 ![SchoolBasicInfoFact](ETL_screenshots/School_Basic_Info_Fact.PNG)
 
 ## Dashboard
+**Geographic Data Analysis**
+<p float="center">
+  <img src="dashboard/heatmap_of_partnership_number_by_post_code.PNG" width="400" />
+  <img src="dashboard/heatmap_of_students_number_by_postcode.PNG" width="400" /> 
+</p>
+
+**Comparative Analysis**
+<p float="center">
+  <img src="dashboard/relative_strength_on_SAT_sections_by_school_type.png" width="500" />
+  <img src="dashboard/schoolname_num_ofstudents_partnership_APcourses.PNG" width="800" /> 
+</p>
+
+<p float="center">
+  <img src="dashboard/number_of_AP_courses-by_postcode_.PNG" width="400" />
+  <img src="dashboard/Total Number of Crimes Committed Based on School’s average SAT Scores.png" width="400" /> 
+</p>
